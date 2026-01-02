@@ -1,0 +1,13 @@
+{
+  "title_styles": {
+    "记录型": { "used": 0, "liked": 0 },
+    "诗性型": { "used": 0, "liked": 0 },
+    "提问型": { "used": 0, "liked": 0 },
+    "故事型": { "used": 0, "liked": 0 }
+  },
+  "ending_styles": {
+    "邀请评论": { "used": 0, "liked": 0 },
+    "情绪收尾": { "used": 0, "liked": 0 },
+    "留白式": { "used": 0, "liked": 0 }
+  }
+}
