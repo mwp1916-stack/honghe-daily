@@ -1,0 +1,34 @@
+name: honghe daily auto post
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # 每天北京时间 10:00（UTC 02:00）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-daily:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Run main script
+        run: |
+          python main.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "daily auto post update" || echo "no changes"
+          git push
