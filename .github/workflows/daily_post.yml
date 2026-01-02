@@ -32,3 +32,4 @@ jobs:
           git add .
           git commit -m "daily auto post update" || echo "no changes"
           git push
+
